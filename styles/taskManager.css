@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Catamaran&family=Dancing+Script:wght@400;600;700&family=Indie+Flower&family=Kalam:wght@400;700&family=Lato:wght@400;700&family=Lobster&family=Lobster+Two:ital,wght@0,400;0,700;1,400&family=Merriweather:ital,wght@0,400;0,700;0,900;1,400&family=Montserrat:ital,wght@0,100;0,200;0,300;0,500;0,600;1,300&family=Pacifico&family=Raleway:ital,wght@0,400;0,500;0,600;0,700;1,500&family=Sacramento&family=Source+Sans+Pro:wght@200;400&display=swap');
+
+html, body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+}
+
+body { 
+    background-image: url("/img/tranquility.png");
+    background-size: cover;
+    color: #434242;
+}
+
+nav { 
+    height: 40px;
+}
+
+h1 { 
+    font-size : 50px; 
+    padding: 15px;
+    font-family: Lobster two;
+    margin: 0;
+    color: #fff;
+    text-align: center;
+}
+
+h3 { 
+    font-family: Lobster two;
+    font-size: 35px;
+    color: #fff;
+}
+
+h4 { 
+    font-family: Lobster two;
+    font-size: 35px;
+    color: #fff;
+    
+}
+
+.container {
+    margin-top: 125px;
+    display: flex; 
+    height: calc(100vh - 70px);
+    /* text-align: center; */
+}
+
+#secList { 
+    flex: 2;
+    text-align: center;
+}
+
+#secForm {
+    flex: 1; 
+    
+}
+
+#star { 
+    color: #FB2576;
+    font-size: 18px;
+    cursor: pointer;
+    margin-bottom: 15px;
+}
+
+#star.fa-sharp {
+    color: #FB2576;
+}
+
+/* Important (text) */
+.form-label { 
+    font-size: 18px;
+    font-family: Montserrat;
+    /* color: #F06292; */
+    color: #B97A95;
+    padding: 2px;
+}
+
+/* Description */
+.form-floating { 
+    margin-bottom: 15px;
+}
+
+#datepicker {
+    font-family: Montserrat;
+    font-size: 18px;
+    /* color: #F06292; */
+    color: #B97A95;
+    padding: 2px;
+}
+
+#pickDate {
+    margin-top: 5px;
+}
+
+#category {
+    font-size: 16px;
+    text-align: center;
+    font-family: Montserrat;
+}
+
+#priority {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 16px;
+    font-family: Montserrat;
+}
+
+#idBudget {
+    margin-top: 20px;
+}
+
+#saveTask { 
+    margin-top: 5px;
+}
+
+.form-control { 
+    word-wrap: break-word;
+}
+
+#footer {
+    height: 30px;
+    text-align: center;  
+    color: #fff;
+    font-family: Sacramento;
+    padding-top: 20px;
+}
