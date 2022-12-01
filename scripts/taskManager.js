@@ -47,7 +47,26 @@ function saveTask() {
     budget
   );
   console.log(task);
+  displayTask(task);
   clearForm();
+}
+
+function displayTask(task) {
+  let syntax = `
+  <div class="task">
+    <div class="title">
+      
+      <h2><i class="fa-sharp fa-solid fa-star"></i>${task.title}</h2>
+      <p>${task.description}</p>
+    </div>
+ 
+    <label class="dueDate">${task.dueDate}</label>
+    <label class="category">${task.category}</label>
+    <label class"priority">${task.priority}</label>
+    <label class"budget">${task.budget}</label>
+  </div>
+  `; //html code
+  $("#pendingTasks").append(syntax);
 }
 
 function clearForm() {
