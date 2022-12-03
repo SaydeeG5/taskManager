@@ -15,5 +15,7 @@ class Task {
     this.category = category;
     this.priority = priority;
     this.budget = budget;
+
+    this.name = "Saydee";
   }
 }

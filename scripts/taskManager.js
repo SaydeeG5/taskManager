@@ -47,8 +47,24 @@ function saveTask() {
     budget
   );
   console.log(task);
-  displayTask(task);
   clearForm();
+
+  // create a post request
+
+  $.ajax({
+    type: "POST",
+    url: "https://fsdiapi.azurewebsites.net/api/tasks/",
+    data: JSON.stringify(task),
+    contentType: "application/json",
+    success: function (response) {
+      displayTask(task);
+      console.log("Server says", response);
+    },
+    error: function (err) {
+      console.log("Saving error", err);
+      alert("Error, task not saved");
+    },
+  });
 }
 
 function displayTask(task) {
@@ -59,7 +75,7 @@ function displayTask(task) {
       <h2><i class="fa-sharp fa-solid fa-star"></i>${task.title}</h2>
       <p>${task.description}</p>
     </div>
- 
+
     <label class="dueDate">${task.dueDate}</label>
     <label class="category">${task.category}</label>
     <label class"priority">${task.priority}</label>
@@ -78,8 +94,44 @@ function clearForm() {
   $("#budget").val("");
 }
 
+function testRequest() {
+  $.ajax({
+    type: "GET",
+    url: "https://fsdiapi.azurewebsites.net",
+    success: function (data) {
+      console.log("Server says", data);
+    },
+    error: function (error) {
+      console.log("Request error", error);
+    },
+  });
+}
+
+function fetchTasks() {
+  $.ajax({
+    type: "GET",
+    url: "https://fsdiapi.azurewebsites.net/api/tasks",
+    success: function (data) {
+      let all = JSON.parse(data); //will parse the json strin into js oj/array
+      console.log(all); // all = all the tasks saved on the server
+      for (let i = 0; i < all.length; i++) {
+        let task = all[i];
+        if (task.name === "Saydee") {
+          displayTask(task);
+        }
+      }
+    },
+    error: function (error) {
+      console.log("Request error", error);
+    },
+  });
+}
+
 function init() {
   console.log("Task Manager");
+
+  //load tasks
+  fetchTasks();
   $("#star").click(toggleImportant);
   $("#saveTask").click(saveTask);
   $("#btnDetails").click(toggleDetails);
@@ -87,4 +139,27 @@ function init() {
 
 window.onload = init;
 
-// test changed
+// To request to server
+// http request
+
+// Two native ways sending http request
+// - xhttprequest …… this is very complex
+// - fetch ..... but this is only a little better than above
+// Jquery has AJAX …. We can send http request
+
+// AJAX right now will allow us to send http request
+
+// First every time we send http request
+
+// Method
+// -get = retrieve data or something
+// -post = create new things
+// -put = to modify
+// -patch = modify
+// -delete = remove
+
+// Only restriction :
+// In "GET" request you’re not allowed to send data or payload
+
+// Payload = data
+//for post make sure you put "/" at the end
