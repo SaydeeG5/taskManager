@@ -152,13 +152,23 @@ h4 {
 
 
 /* function displayTask */
+
+.fa-sharp { 
+    font-size: 12px;
+}
 .taskTitle {
     font-family: Raleway;
-    color: #434242;
-    font-size: 20px;
+    color: #fff;
+    font-size: 15px;
     font-weight: 600;
+    text-transform: uppercase;
+    background-color: #4342421e;
+    width: 50%;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    word-wrap: break-word;
 }
-
 
 .category { 
     color: #CE7777;
@@ -173,6 +183,8 @@ h4 {
 .taskDesc{
     font-family: Raleway;
     color: #434242;
+    text-align: center;
+    word-wrap: break-word;
 }
 
 .dueDate {
@@ -188,7 +200,7 @@ h4 {
 .task {
     background-color: #4342420e;
     padding: 10px;
-    border-radius: 5%;
+    border-radius: 10px;
     align-items: center;
 }
 

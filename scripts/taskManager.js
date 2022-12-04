@@ -81,7 +81,7 @@ function displayTask(task) {
     <label class="dueDate">${task.dueDate}</label>
     <label class="category">${task.category}</label>
     <label class="priority">${task.priority}</label>
-    <label class="budget">${task.budget}</label>
+    <label class="budget">$${task.budget}</label>
   </div>
   `; //html code
   $("#pendingTasks").append(syntax);
@@ -114,7 +114,7 @@ function deleteTask() {
     type: "DELETE",
     url: "https://fsdiapi.azurewebsites.net/api/tasks/clear/Saydee",
     success: function (response) {
-      alert("Task has been deleted!");
+      alert("Tasks has been deleted!");
     },
     error: function (error) {
       alert.warning("Task was NOT deleted");
