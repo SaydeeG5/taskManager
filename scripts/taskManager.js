@@ -87,6 +87,10 @@ function displayTask(task) {
   $("#pendingTasks").append(syntax);
 }
 
+/* <button type="button" class="btnDelete btn-outline-secondary" onlick="deleteDisTask">
+Delete
+</button> */
+
 function clearForm() {
   $("#txttitle").val("");
   $("#txtdesc").val("");

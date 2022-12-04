@@ -48,6 +48,7 @@ h4 {
 #secList { 
     flex: 2;
     background-color: rgba(255, 255, 255, 0.14);
+    border-radius: 10px;
     padding: 25px;
 }
 
@@ -62,6 +63,7 @@ h4 {
 #secForm {
     flex: 1; 
     background-color: #b97a9518;
+    border-radius: 10px;
     padding: 25px;
 }
 
