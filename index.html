@@ -23,12 +23,18 @@
     <main class="container">
     <section id="secList">
         <h3> Pending Tasks </h3>
-        <button id="btnDetails" type="button" class="btn btn-outline-secondary">
-        Hide / Show Details
-        </button>
         <div id="pendingTasks">
-        
+            <button id="btnDetails" type="button" class="btn btn-outline-secondary">
+            Hide / Show Details
+            </button>
+            <button id="btnDelete" type="button" class="btn btn-outline-secondary">
+                Delete
+                </button>
+            </div>
+        <div id="pendingTasks">
+                    
         </div>
+        
     </section>
 
     
@@ -70,9 +76,9 @@
         <div>
             <select id="priority" class="form-select form-select-sm" aria-label=".form-select-sm example">
                 <option value=""selected disabled>Priority</option>
-                <option value="HIGH">High</option>
-                <option value="MEDIUM">Medium</option>
-                <option value="LOW">Low</option>
+                <option value="High">High</option>
+                <option value="Medium">Medium</option>
+                <option value="Low">Low</option>
             </select>
         </div>
 

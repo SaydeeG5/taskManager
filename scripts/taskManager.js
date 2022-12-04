@@ -66,20 +66,22 @@ function saveTask() {
     },
   });
 }
-
+{
+  /* <i class="fa-sharp fa-solid fa-star"></i> */
+}
 function displayTask(task) {
   let syntax = `
   <div class="task">
     <div class="title">
-      
-      <h2><i class="fa-sharp fa-solid fa-star"></i>${task.title}</h2>
-      <p>${task.description}</p>
+      <i class="fa-sharp fa-solid fa-star"></i>
+      <h2 class="taskTitle">${task.title}</h2>
+      <p class="taskDesc">${task.description}</p>
     </div>
 
     <label class="dueDate">${task.dueDate}</label>
     <label class="category">${task.category}</label>
-    <label class"priority">${task.priority}</label>
-    <label class"budget">${task.budget}</label>
+    <label class="priority">${task.priority}</label>
+    <label class="budget">${task.budget}</label>
   </div>
   `; //html code
   $("#pendingTasks").append(syntax);
@@ -105,6 +107,25 @@ function testRequest() {
       console.log("Request error", error);
     },
   });
+}
+
+function deleteTask() {
+  $.ajax({
+    type: "DELETE",
+    url: "https://fsdiapi.azurewebsites.net/api/tasks/clear/Saydee",
+    success: function (response) {
+      alert("Task has been deleted!");
+    },
+    error: function (error) {
+      alert.warning("Task was NOT deleted");
+    },
+  });
+  deleteDisTask();
+}
+
+function deleteDisTask(task) {
+  console.log("Deleting" + task);
+  $(".task").remove();
 }
 
 function fetchTasks() {
@@ -135,6 +156,7 @@ function init() {
   $("#star").click(toggleImportant);
   $("#saveTask").click(saveTask);
   $("#btnDetails").click(toggleDetails);
+  $("#btnDelete").click(deleteTask);
 }
 
 window.onload = init;
